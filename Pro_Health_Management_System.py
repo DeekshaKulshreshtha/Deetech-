@@ -3,7 +3,7 @@ def dateandtime():
     import datetime
     return datetime.datetime.now()
 date = dateandtime()
-#------------------------------>Excersics and diet Functions<-------------------------------------------
+#------------------------------>Excersics and Diet Functions<-------------------------------------------
 
 def excersicedeeksha():
     with open("ExcersiceDeeksha.txt", "a") as f:
@@ -25,14 +25,39 @@ def dietdeeksha():
         f.write(str(date)+"---------------->"+input("Enter Diet Name : ")+'\n')
         print("Date has inserted successfully")
 def dietsandhya():
-    with open("FoodSandhya.txt.txt", "a") as f:
+    with open("FoodSandhya.txt", "a") as f:
         f.write(str(date)+"---------------->"+input("Enter Diet Name : ")+'\n')
         print("Date has inserted successfully")
 def dietshishupal():
-    with open("FoodShishupal.txt.txt", "a") as f:
+    with open("FoodShishupal.txt", "a") as f:
         f.write(str(date)+"---------------->"+input("Enter Diet Name : ")+'\n')
         print("Date has inserted successfully")
 
+
+# -----------------------------> Excersice and Diet Display Functions <--------------------------------------------------
+def dietDeekshaDisplay():
+    with open("FoodDeeksha.txt", "r") as f:
+        print(f.read())
+
+def dietSandhyaDisplay():
+    with open("FoodSandhya.txt", "r") as f:
+        print(f.read())
+
+def dietShishupalDisplay():
+    with open("FoodShishupal.txt", "r") as f:
+        print(f.read())
+
+def excersiceDeekshaDisplay():
+    with open("ExcersiceDeeksha.txt", "r") as f:
+        print(f.read())
+
+def excersiceSandhyaDisplay():
+    with open("ExcersiceSandhya.txt", "r") as f:
+        print(f.read())
+
+def excersiceShishupalDisplay():
+    with open("ExcersiceShishupal.txt", "r") as f:
+        print(f.read())
 # -----------------------------> Main Loop & Structure <------------------------------------------------
 
 print("---------------------------> Health Managemant System <----------------------------------------")
@@ -64,6 +89,28 @@ if(num1==1):
             dietshishupal()
         elif (num2 ==3 and num3 ==2):  # Diet shishupal
             excersiceshishupal()
+        else :
+            print("Invalid Input")
+
     except Exception as e:
         print(e)
         print("Inavalid Input")
+
+else :
+    num2 = int(input("\n1. Deeksha\n2. Sandhya\n3. Shishupal\nSelect the person for data : "))
+    num3 = int(input("1. Diet\n2. Excersice\nEnter your choice : "))
+    if(num2 == 1 and num3 == 1): # Deeksha ki diet
+        dietDeekshaDisplay()
+    elif(num2 == 1 and num3 == 2): #Deeksha ki Excersice
+        excersiceDeekshaDisplay()
+    elif(num2 == 2 and num3 == 1): # sandhya ki diet
+        dietSandhyaDisplay()
+    elif(num2 == 2 and num3 == 2): # sandhya ki Excersice
+        excersiceSandhyaDisplay()
+    elif(num2 == 3 and num3 == 1): # Shishupal ki diet
+        dietShishupalDisplay()
+    elif(num2 == 3 and num3 == 2): # Shishupal ki excersice
+        excersiceShishupalDisplay()
+    else :
+        print("Invalid Input")
+
